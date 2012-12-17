@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="All Humans Must Die:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/All_Humans_Must_Die_jar</output-path>
+    <root id="archive" name="Desktop.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/Desktop/src/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="Desktop" />
+      <element id="module-output" name="LudumDare25-Fix" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Libraries/Java/libgdx-0.9.6/gdx-backend-lwjgl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Libraries/Java/libgdx-0.9.6/gdx-backend-lwjgl-natives.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Libraries/Java/libgdx-0.9.6/gdx.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Libraries/Java/bloom-1.21/bloom.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Libraries/Java/tween-engine-api-6.3.3/tween-engine-api.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Libraries/Java/libgdx-0.9.6/gdx-natives.jar" path-in-jar="/" />
+      <element id="dir-copy" path="$PROJECT_DIR$/Android/assets" />
+    </root>
+  </artifact>
+</component>
