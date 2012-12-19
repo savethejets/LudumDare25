@@ -175,6 +175,18 @@ public class Invader extends AbstractEntity implements Updateable {
 
         EntitySpawner.getInstance().spawn(bullet);
 
+        bullet = new InvaderBullet();
+
+        bullet.setPosition(new Vector2(getPosition().x + getWidth() / 2 + 5, getPosition().y - getHeight()));
+
+        EntitySpawner.getInstance().spawn(bullet);
+
+        bullet = new InvaderBullet();
+
+        bullet.setPosition(new Vector2(getPosition().x + getWidth() / 2 - 5, getPosition().y - getHeight()));
+
+        EntitySpawner.getInstance().spawn(bullet);
+
         DisplayNotifier.getInstance().notify(DisplayNotifier.DisplayEvent.PLAY_SOUND, SoundController.SoundId.INVADER_SHOOT);
     }
 }

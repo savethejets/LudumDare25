@@ -1,5 +1,7 @@
 package com.ludumdare.game;
 
+import com.ludumdare.entities.Shooter;
+
 public class Difficulty {
 
     private int difficulty = 1;
@@ -44,9 +46,11 @@ public class Difficulty {
 
     public void increaseDifficulty() {
         difficulty++;
+        Shooter.TIME_BETWEEN_SHOTS += 0.3f;
     }
 
     public void reset() {
         difficulty = 1;
+        Shooter.TIME_BETWEEN_SHOTS = 0.9f;
     }
 }

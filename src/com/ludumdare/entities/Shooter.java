@@ -13,7 +13,7 @@ import java.util.Random;
 public class Shooter extends AbstractEntity implements Updateable {
 
     private static final float VELOCITY = 80f;
-    public static float TIME_BETWEEN_SHOTS = 0.7f;
+    public static float TIME_BETWEEN_SHOTS = 0.9f;
     public static final float TIME_TO_WAIT_UNDER_SHIELD = 0.7f;
     public static final float TIME_TO_WAIT_FOR_RESPAWN = 6f;
     private boolean hold;

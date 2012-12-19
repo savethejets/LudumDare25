@@ -10,7 +10,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.ludumdare.LudumDareMain;
@@ -157,15 +156,18 @@ public class GameScreen extends AbstractScreen {
 
         if (gameController.isGameStarted()) {
 
-            if (Input.Keys.A == keycode) {
-                gameController.onButtonLeftPressed();
+            if (Input.Keys.UP == keycode) {
+                gameController.onButtonIncreaseVelocityPressed();
             }
 
-            if (Input.Keys.D == keycode) {
-                gameController.onButtonRightPressed();
+            if (Input.Keys.DOWN == keycode) {
+                gameController.onButtonDecreaseVelocityPressed();
             }
 
-            if (Input.Keys.S == keycode) {
+            if (Input.Keys.LEFT == keycode
+                    || Input.Keys.RIGHT == keycode
+                    || Input.Keys.SHIFT_RIGHT == keycode
+                    || Input.Keys.SHIFT_LEFT == keycode) {
                 gameController.onButtonStopPressed();
             }
 

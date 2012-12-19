@@ -148,7 +148,7 @@ public class GameController implements Updateable {
         for (AbstractEntity object : objects) {
             if (object instanceof Invader) {
                 invaderCount++;
-                if (object.getPosition().y <= 40) {
+                if (object.getPosition().y <= 70) {
                     gameWin();
                 }
             }
@@ -241,21 +241,21 @@ public class GameController implements Updateable {
         return null;
     }
 
-    public void onButtonLeftPressed() {
-        if (!areAnyInvadersMovingUpOrDown()) {
-            for (AbstractEntity object : objects) {
-                if (object instanceof Invader) {
-                    ((Invader) object).setMoveDirection(AbstractEntity.MoveDirection.LEFT);
-                }
-            }
-
-            GameBoardInformation.getInstance().setInvaderMoveDirection(AbstractEntity.MoveDirection.LEFT);
-        } else {
-            queuedDirection = AbstractEntity.MoveDirection.LEFT;
+    public void onButtonIncreaseVelocityPressed() {
+        Invader.VELOCITY = 80f;
+        if (areInvadersPaused()) {
+            onButtonStopPressed();
         }
     }
 
-    public void onButtonRightPressed() {
+    public void onButtonDecreaseVelocityPressed() {
+        Invader.VELOCITY = 45f;
+        if (areInvadersPaused()) {
+            onButtonStopPressed();
+        }
+    }
+
+    public void moveAllInvadersRight() {
         if (!areAnyInvadersMovingUpOrDown()) {
 
             for (AbstractEntity object : objects) {
@@ -276,6 +276,17 @@ public class GameController implements Updateable {
                 ((Invader) object).setHold(!((Invader) object).isHold());
             }
         }
+    }
+
+    public boolean areInvadersPaused() {
+        for (AbstractEntity object : objects) {
+            if (object instanceof Invader) {
+                if (((Invader) object).isHold()) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public boolean isNumberOfOppositeInvadersEqualToTotalInvaders() {
@@ -318,7 +329,7 @@ public class GameController implements Updateable {
                 ((Shooter) object).setHold(false);
             }
         }
-        onButtonRightPressed();
+        moveAllInvadersRight();
     }
 
     public Difficulty getDifficulty() {

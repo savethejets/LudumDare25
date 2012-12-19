@@ -8,7 +8,10 @@ public class ShooterBullet extends AbstractBullet {
 
     @Override
     public void doOnCollision(Object object) {
-
+        if (object instanceof InvaderBullet) {
+            ((InvaderBullet) object).cleanUp = true;
+            cleanUp = true;
+        }
     }
 
     @Override
